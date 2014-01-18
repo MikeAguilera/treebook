@@ -7,8 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<!-- Navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
 
-<%= yield %>
-
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand text-muted" href="#">Treebook Forum</a>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+           <!--  <li class="active"><a href="#">Home</a></li> -->
+           <li class="active"><%= link_to "Home", statuses_path %></li> 
+            <li><a href="#">About Treebook Forum</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" data-target="#">Treebook<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Learn About Treebook</a></li>
+                <!-- <li><a href="#">Status Updates</a></li> -->
+                <li><%= link_to "Status Updates", statuses_path %></li>
+                <!-- <li><a href="#">Where to Start?</a></li> -->
+                <li><%= link_to "Where to Start?", new_status_path %></li>
+                <li class="divider"></li>
+                <li><a href="#">Lets Share &amp; Talk</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End navbar -->
+    
+		<div class="container">
+			<%= yield %>
+		</div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 </body>
 </html>
